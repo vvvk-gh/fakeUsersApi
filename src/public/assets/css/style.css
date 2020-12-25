@@ -4,7 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   /* overflow-x: hidden; */
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 nav {
@@ -36,20 +36,25 @@ nav .navLinks {
   justify-content: space-evenly;
   text-transform: uppercase;
 }
-
-ul li:hover {
+nav ul li a {
+  text-decoration: none;
+  border: none;
+  color: black;
+}
+ul li a:hover {
   color: #5f259f;
+  font-weight: bolder;
   cursor: pointer;
 }
 
 ul .active {
   color: #5f259f;
-  font-weight: bold;
+  font-weight: bolder;
   border-bottom: 5px solid #5f259f;
 }
 section {
   /* padding: 0.1rem; */
-  margin: 1rem 0rem;
+  margin: 2rem 0rem;
   height: auto;
   width: 100%;
   /* border: 2px solid yellowgreen; */
@@ -60,13 +65,16 @@ section {
 }
 
 #hero {
-  padding: 0.2rem;
   display: block;
 }
 
 section .textContainer {
   width: 70%;
   height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* border: 3px solid red; */
 }
 
@@ -90,8 +98,29 @@ section .svgContainer img {
   height: 100vh;
   width: 50%;
 } */
+div svg {
+  width: 30%;
+  height: 30vh;
+}
+
+.button {
+  color: white;
+  font-weight: bold;
+  /* border: 2px solid black; */
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 100px;
+  background-color: #5f259f;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  top: 10px;
+}
 
 footer {
+  /* margin-bottom: 0px; */
   height: 30vh;
   width: 100%;
 }
