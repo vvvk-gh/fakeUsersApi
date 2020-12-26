@@ -1,10 +1,11 @@
-const db = require('../db/db');
-const {User} = require('../db/model');
+const { ObjectId } = require("mongodb");
+const {createCollection} = require(`../db/db`);
 
 //Get all Users
 async function getAllUsers(){
     try{
-        let users =  await User.findAll();
+    const fakeUsers = await createCollection(); 
+    const users =  await fakeUsers.find({}).toArray();
         return users;
     }
    catch(e){
@@ -15,56 +16,63 @@ async function getAllUsers(){
 
 //get user by id
 async function getUserById(userId){
-    let user = await User.findAll({
-            where: {
-                id: userId
-            }
-        });   
+
+    const fakeUsers = await createCollection(); 
+    const user =  await fakeUsers.find({ 
+            "_id" : ObjectId(userId)
+    }).toArray()
         
         return user;
 }
 
 //get user by username
 async function getUserByUsername(userName){
-    let user = await User.findAll({
-            where: {
-                name: userName
-            }
-        });
+    
+    const fakeUsers = await createCollection(); 
+    const user =  await fakeUsers.find({ 
+        
+        name : userName
+    }).toArray()
+
         return user;        
 }
 
 //create a new user 
 
 async function createNewUser(Username , Userage , Useroccupation, Useremail, Usergender) {
-    const user = await User.create({
+    const fakeUsers = await createCollection(); 
+    const user = await fakeUsers.insertOne({
         name : Username,
         age: parseInt(Userage),
         occupation:Useroccupation,
         email:Useremail,
         gender :Usergender
-    })
+    });
     return user;
 }
 
 //Delete User
 
 async function deleteUser(userId){
-
-    User.destroy({
-        where: {
-          id: userId
-        }
-      });
+    const fakeUsers = await createCollection(); 
+    const user = await fakeUsers.deleteOne({"_id" : ObjectId(userId)}); 
+    return user;
 } 
 
 //Update User
 async function updateUserById(data , userId){
-    User.update(data , {
-        where :{
-            id : userId
-        }
-    })
+    try{
+        const fakeUsers = await createCollection(); 
+        const user = await fakeUsers.updateMany(
+                {"_id" : ObjectId(userId)}, 
+                { $set : data});
+        return user; 
+        
+    }
+    catch(E){
+        console.log(E);
+    }
+   
 }
 
 module.exports = {
@@ -80,24 +88,22 @@ module.exports = {
 
 // getAllUsers()
 // .then((users)=>{
-//     for(let user of users){
-//         console.log(user.dataValues);
-//     }
+//         console.log(users);
 // })
 // .catch(err => console.log(err))
 
-// getUserById(2)
+// getUserById('5fe792bb75cc85790edbaeed')
 // .then(user => console.log(user))
 // .catch(e => console.log(e));
 
-// getUserByUsername('Falcon')
+// getUserByUsername('Samantha')
 // .then(user => console.log(user))
 // .catch(e => console.log(e));
 
-// deleteUser(3)
-//     .then(()=> console.log(`User Deleted `))
+// deleteUser('5fe792bb75cc85790edbaeed')
+//     .then((user)=> console.log(`User Deleted : ${user.result.n}`))
 //     .catch((E)=> console.log(E));
 
-// updateUserById({occupation : 'Em Eng 1'} , 2)
-//     .then((user) => console.log(user))
+// updateUserById({email : 'venky@asiancinemas.com'} , '5fe792bb75cc85790edbaeed')
+//     .then((user) => console.log(user.matchedCount))
 //     .catch((error) => console.log(error))
