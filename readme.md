@@ -3,17 +3,12 @@
 It's a API service full of fake and dummy data for playing around with real users and post data.
 Feel free to use it in your demo projects, tutorials, or testing tasks.
 
-## Creating Database , User and Grant Previleges
+## Cloud db : Mongo Atlas
 
-```sql
+```
+1. Register in mongodb atlas.
+2. Configure the setup and make a connection to your application.
 
-    CREATE DATABASE fakeuserapi;    #format: CREATE DATABASE <database_name>
-    USE fakeuserapi;                 #selecting the db;
-
-    CREATE USER 'fakeapiuser' IDENTIFIED BY 'fakeuserpass';
-    USE fakeuserapi;
-    GRANT ALL PRIVILEGES ON fakeapiuser.* TO fakerapiuser;
-    FLUSH PRIVILEGES;
 ```
 
 # Anatomy of the project

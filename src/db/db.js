@@ -1,17 +1,26 @@
-const Sequelize = require('sequelize');
+const {MongoClient} = require('mongodb');
 
-const db = new Sequelize('fakeuserapi', 'fakeapiuser', 'fakeapipass', {
-    host: 'localhost',
-    dialect: 'mysql'
-  });
+// MongoDB url
+const url = `mongodb+srv://fakeapiuser:fakeapipass@cluster0.npauu.mongodb.net`;
 
-//authenticate
-// db.authenticate()
-//   .then(() => {
-//     console.log('Connection has been established successfully.');
-//   })
-//   .catch(err => {
-//     console.error('Unable to connect to the database:', err);
-//   });
+//DB Name
+const dbName = 'fakeusersDb';
 
-module.exports = {Sequelize, db}
+let fakeUsers;
+async function createCollection(){
+  try{
+    const client = await MongoClient.connect(url);
+    const fakeusersDb = client.db(dbName);
+    fakeUsers = fakeusersDb.collection('fakeUsers');
+    console.log(fakeUsers.namespace);
+    console.log(`DB and collection Created`);
+    return fakeUsers
+  }
+  catch(E){
+    console.log(E);
+  } 
+}
+
+module.exports = {
+  createCollection 
+}
