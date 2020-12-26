@@ -94,14 +94,74 @@ section .svgContainer img {
   flex-direction: row-reverse;
 }
 
-/* section .svgContainer {
+#aboutme {
+  width: 100%;
   height: 100vh;
-  width: 50%;
-} */
-div svg {
-  width: 30%;
-  height: 30vh;
+  overflow: hidden;
+  /* border: 3px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
+/* 
+#aboutme #textBox {
+  height: 70vh;
+  font-size: larger;
+  width: 40%;
+  border: 3px solid yellow;
+} */
+
+#aboutme #textBox {
+  width: 50%;
+  height: 50vh;
+}
+#aboutme #ImageWrapper {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+}
+
+#aboutme #ImageWrapper:hover > img {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+}
+
+#aboutme #ImageWrapper:hover > svg {
+  transform: scale(1.3) rotate(60deg);
+}
+
+#ImageWrapper svg {
+  width: 100%;
+  height: 100vh;
+  transition: 1s ease-in-out;
+}
+#ImageWrapper img {
+  position: absolute;
+  width: auto;
+  height: 300px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s ease-in-out;
+}
+/* 
+#aboutme #ImageWrapper {
+  border: 3px solid yellow;
+  height: 70vh;
+  width: 40%;
+} */
+
+/* #aboutme #ImageWrapper svg {
+  height: 50vh;
+  width: 29%;
+} */
+/* #aboutme svg {
+  border: 3px solid olive;
+  width: 50%;
+  height: 100%;
+} */
 
 .button {
   color: white;
