@@ -4,7 +4,7 @@ const {
     userRoute
 } = require('./routes/users');
 const app = express();
-const port = 3434;
+const port = process.env.PORT || 3434;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -14,6 +14,6 @@ app.use('/api/users' , userRoute);
 
 
 app.listen(port ,()=>{
-    console.log(`App Listening on ${port}`);
+    console.log(`App Listening on http://localhost:${port}`);
 });
 
