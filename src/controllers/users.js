@@ -86,6 +86,10 @@ module.exports = {
 
 // Testing the functions
 
+// createNewUser('vamsi' , 23 , 'it' , 'vam@674.com' , 'male')
+//     .then(user =>  console.log(user.ops))
+//     .catch(E => console.log(E));
+
 // getAllUsers()
 // .then((users)=>{
 //         console.log(users);
