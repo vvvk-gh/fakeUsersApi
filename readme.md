@@ -57,3 +57,9 @@ src/
    required fields are
 
    - user id
+
+# Heroku Deployment
+
+heroku login
+
+heroku create <app_name>
