@@ -3,9 +3,18 @@
 It's a API service full of fake and dummy data for playing around with real users and post data.
 Feel free to use it in your demo projects, tutorials, or testing tasks.
 
-## Cloud db : Mongo Atlas
+## [Live Demo](https://fakeusersapi.herokuapp.com/)
+
+# Usage :
+
+All users : https://fakeusersapi.herokuapp.com/api/users
+
+Single User : https://fakeusersapi.herokuapp.com/api/users/{id}
+
+## DB: Cloud Mongo Atlas
 
 ```
+
 1. Register in mongodb atlas.
 2. Configure the setup and make a connection to your application.
 

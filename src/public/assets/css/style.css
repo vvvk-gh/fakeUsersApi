@@ -3,13 +3,11 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow-x: hidden; */
   scroll-behavior: smooth;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 nav {
-  /* border: 1px solid purple; */
   display: flex;
   height: 10vh;
   flex-direction: row;
@@ -22,13 +20,11 @@ nav #navBrand {
   color: #5f259f;
   font-size: 1.5rem;
   width: 25%;
-  /* border: 1px dotted tomato; */
 }
 nav .navLinks {
   text-decoration: none;
   list-style-type: none;
   height: 10vh;
-  /* border: 3px solid thistle; */
   width: 68%;
   display: flex;
   font-size: 1rem;
@@ -54,11 +50,9 @@ ul .active {
   border-bottom: 5px solid #5f259f;
 }
 section {
-  /* padding: 0.1rem; */
   margin: 2rem 0rem;
   height: auto;
   width: 100%;
-  /* border: 2px solid yellowgreen; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -76,16 +70,13 @@ section .textContainer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 3px solid red; */
 }
 
 section .svgContainer {
   height: 50vh;
   width: 30%;
-  /* border: 3px solid tomato; */
 }
 section .svgContainer img {
-  /* border: 2px dashed teal; */
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -99,20 +90,11 @@ section .svgContainer img {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  /* border: 3px solid black; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
-/* 
-#aboutme #textBox {
-  height: 70vh;
-  font-size: larger;
-  width: 40%;
-  border: 3px solid yellow;
-} */
-
 #aboutme #textBox {
   width: 50%;
   height: 50vh;
@@ -147,23 +129,6 @@ section .svgContainer img {
   transform: translate(-50%, -50%);
   transition: 1s ease-in-out;
 }
-/* 
-#aboutme #ImageWrapper {
-  border: 3px solid yellow;
-  height: 70vh;
-  width: 40%;
-} */
-
-/* #aboutme #ImageWrapper svg {
-  height: 50vh;
-  width: 29%;
-} */
-/* #aboutme svg {
-  border: 3px solid olive;
-  width: 50%;
-  height: 100%;
-} */
-
 .button {
   color: white;
   font-weight: bold;
@@ -181,7 +146,6 @@ section .svgContainer img {
 }
 
 footer {
-  /* margin-bottom: 0px; */
   height: 30vh;
   width: 100%;
 }

@@ -12,8 +12,8 @@ async function createCollection(){
     const client = await MongoClient.connect(url);
     const fakeusersDb = client.db(dbName);
     fakeUsers = fakeusersDb.collection('fakeUsers');
-    console.log(fakeUsers.namespace);
-    console.log(`DB and collection Created`);
+    // console.log(fakeUsers.namespace);
+    // console.log(`DB and collection Created`);
     return fakeUsers
   }
   catch(E){

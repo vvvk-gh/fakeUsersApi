@@ -27,7 +27,6 @@ route.get('/:id' , async(req , res)=>{
 
 route.post('/' ,async(req ,res)=>{
    
-    // console.log(req.body);
     try{
         const {name , age , occupation , email , gender} = req.body;
         const user = await createNewUser(name , age , occupation, email ,gender);
@@ -35,15 +34,9 @@ route.post('/' ,async(req ,res)=>{
         res.send(`No of User Modified : ${user.result.n}`);
     }
     catch(e){
-        // console.log(e);
         res.status(402).send('error : All the fields are mandatory');
     }
 
-
-
-    // if(!(name) || !(gender) || !(email)|| !(occupation) || !(age)){
-    //     res.status(403).send(`{Error : All the fields are mandatory}`);
-    // }
 });
 
 route.delete('/:id' , async(req ,res)=>{
@@ -66,7 +59,6 @@ route.put('/:id' , async(req ,res)=>{
         res.status(200).send(`No of User Modified : ${user.result.n}`);
     }
     catch(e){
-        console.log(e);
         res.status(404).send('User with that id not found');
     }
    

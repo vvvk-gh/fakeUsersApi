@@ -1,6 +1,5 @@
 $(document).ready(()=>{
-    
-    // console.log('Document loaded');
+
     function getUsers() {
         $.get('/api/users' , (users)=>{
             console.log(users)
@@ -23,7 +22,6 @@ $(document).ready(()=>{
     getUsers();
 
     $('#submit').click(()=>{
-        // console.log(`button clicked`);
 
     let name = $('#name').val()
     let age = $('#age').val()
@@ -42,8 +40,5 @@ $(document).ready(()=>{
     }
    
 });
-    
-
-    
 
 });
